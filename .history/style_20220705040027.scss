@@ -776,7 +776,4 @@ footer {
   @include mobile {
     min-height: 60px;
   }
-  @include tablet {
-    min-height: 100px;
-  }
 }

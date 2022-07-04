@@ -752,8 +752,6 @@ body {
     @include tablet {
       gap: 0;
       padding-left: 10px;
-      background-color: #0344a2;
-      margin: 0 -15px;
     }
     img {
       @include mobile {
@@ -775,8 +773,5 @@ footer {
   text-align: center;
   @include mobile {
     min-height: 60px;
-  }
-  @include tablet {
-    min-height: 100px;
   }
 }
