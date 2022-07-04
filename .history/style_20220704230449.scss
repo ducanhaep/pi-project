@@ -46,15 +46,15 @@ html:focus-within {
   }
 }
 @mixin tablet {
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  @media screen and (min-width: 768px) and (max-width: 1025) {
     @content;
   }
 }
-// @mixin pc {
-//   @media screen and (max-width: 992px) {
-//     @content;
-//   }
-// }
+@mixin pc {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -64,16 +64,11 @@ body {
   background-image: url(./images/big-bg-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
   @include mobile {
-    // background-image: url(./images/bg1.jpg);
-    max-width: 100%;
-    padding: 0 15px;
+    max-width: 90%;
   }
   @include tablet {
-    // background-image: url(./images/bg1.jpg);
-    max-width: 100%;
-    padding: 0 15px;
+    max-width: 70%;
   }
   margin: 0 auto;
 }
@@ -82,28 +77,22 @@ body {
   max-width: 1165px;
   margin: 0 auto;
   border: 2px solid red;
-  @include mobile {
-    max-width: 100%;
-  }
-  @include tablet {
-    max-width: 100%;
-  }
 }
 .navigation {
-  // @include mobile {
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background: var(--clr-white);
-  //   display: grid;
-  //   grid-template-rows: auto 1fr auto;
-  //   row-gap: 1rem;
-  //   box-shadow: var(--clr-red-dark);
-  //   transition: var(--transition);
-  //   transform: translate(-100%);
-  // }
+  @include mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-white);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    box-shadow: var(--clr-red-dark);
+    transition: var(--transition);
+    transform: translate(-100%);
+  }
 }
 
 .show-sidebar {
@@ -145,18 +134,11 @@ body {
   align-items: center;
   margin-top: 130px;
   position: relative;
-  @include mobile {
-    margin-top: 50px;
-  }
 
   &-title {
     height: 125px;
     width: 680px;
     margin-bottom: 40px;
-    @include mobile {
-      height: 70px;
-      width: 330px;
-    }
   }
   &-image {
     margin-bottom: 20px;
@@ -164,10 +146,6 @@ body {
     .zeus {
       height: 480px;
       width: 430px;
-      @include mobile {
-        height: 300px;
-        width: 260px;
-      }
     }
     .cloud {
       position: absolute;
@@ -176,10 +154,6 @@ body {
       img {
         height: 200px;
         width: 600px;
-        @include mobile {
-          height: 200px;
-          width: 270px;
-        }
       }
     }
     // .cloud1 {
@@ -201,11 +175,8 @@ body {
     //   }
     // }
     .cloud3 {
-      @include mobile {
-        display: none;
-      }
       position: absolute;
-      bottom: -22px;
+      bottom: -111px;
       right: 425px;
       z-index: 2;
       img {
@@ -235,14 +206,6 @@ body {
     justify-content: center;
     gap: 40px;
     z-index: 2;
-    @include mobile {
-      flex-direction: column;
-      gap: 0px;
-    }
-    @include tablet {
-      flex-direction: column;
-      gap: 20px;
-    }
     img {
       height: 60px;
       width: 260px;
@@ -261,14 +224,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: var(--primary-text-color);
-    @include tablet {
-      position: initial;
-      margin-top: 50px;
-    }
-    @include mobile {
-      position: initial;
-      margin-top: 25px;
-    }
 
     .content {
       display: flex;
@@ -311,69 +266,19 @@ body {
   margin-top: 260px;
   display: flex;
   gap: 20px;
-  @include mobile {
-    margin-top: 100px;
-    flex-direction: column;
-    align-items: center;
-    & {
-      .left-img {
-        order: 2;
-      }
-      .content {
-        order: 1;
-      }
-      .right-img {
-        display: none;
-      }
-    }
-  }
-  @include tablet {
-    margin-top: 150px;
-    flex-direction: column;
-    align-items: center;
-    & {
-      .left-img {
-        order: 2;
-      }
-      .content {
-        order: 1;
-      }
-      .right-img {
-        display: none;
-      }
-    }
-  }
 
   .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    @include mobile {
-      gap: 30px;
-    }
-    @include tablet {
-      gap: 40px;
-    }
     .title {
       height: 95px;
       width: 460px;
-      @include mobile {
-        height: 70px;
-        width: 280px;
-      }
     }
     p {
       text-align: center;
       font-size: 14px;
-      @include mobile {
-        padding: 10px;
-        // color: #161502;
-        font-weight: 400;
-      }
-      @include tablet {
-        padding: 0 50px;
-      }
     }
   }
 
@@ -391,30 +296,10 @@ body {
 .road-map {
   display: block;
   margin-top: 130px;
-  @include mobile {
-    margin-top: 70px;
-  }
-  @include tablet {
-    margin-top: 70px;
-  }
   &-img {
     display: flex;
     justify-content: center;
     padding-left: 50px;
-    @include mobile {
-      padding-left: 0px;
-    }
-    @include tablet {
-      padding-left: 0px;
-    }
-    img {
-      @include mobile {
-        width: 220px;
-        height: 70px;
-      }
-      @include tablet {
-      }
-    }
   }
 
   .content {
@@ -423,21 +308,10 @@ body {
     font-size: 14px;
     margin-top: 90px;
     padding-left: 170px;
-    @include mobile {
-      flex-direction: column;
-      padding-left: 0px;
-    }
-    @include tablet {
-    }
     .box-phase {
       display: flex;
       flex-direction: column;
       gap: 60px;
-      @include mobile {
-        gap: 20px;
-        font-weight: 400;
-        font-size: 16px;
-      }
     }
     .phase {
       display: flex;

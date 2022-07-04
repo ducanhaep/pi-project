@@ -66,12 +66,10 @@ body {
   background-size: cover;
   overflow: hidden;
   @include mobile {
-    // background-image: url(./images/bg1.jpg);
     max-width: 100%;
     padding: 0 15px;
   }
   @include tablet {
-    // background-image: url(./images/bg1.jpg);
     max-width: 100%;
     padding: 0 15px;
   }
@@ -205,7 +203,7 @@ body {
         display: none;
       }
       position: absolute;
-      bottom: -22px;
+      bottom: -111px;
       right: 425px;
       z-index: 2;
       img {
@@ -392,29 +390,13 @@ body {
   display: block;
   margin-top: 130px;
   @include mobile {
-    margin-top: 70px;
   }
   @include tablet {
-    margin-top: 70px;
   }
   &-img {
     display: flex;
     justify-content: center;
     padding-left: 50px;
-    @include mobile {
-      padding-left: 0px;
-    }
-    @include tablet {
-      padding-left: 0px;
-    }
-    img {
-      @include mobile {
-        width: 220px;
-        height: 70px;
-      }
-      @include tablet {
-      }
-    }
   }
 
   .content {
@@ -433,11 +415,6 @@ body {
       display: flex;
       flex-direction: column;
       gap: 60px;
-      @include mobile {
-        gap: 20px;
-        font-weight: 400;
-        font-size: 16px;
-      }
     }
     .phase {
       display: flex;

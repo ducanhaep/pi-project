@@ -66,12 +66,10 @@ body {
   background-size: cover;
   overflow: hidden;
   @include mobile {
-    // background-image: url(./images/bg1.jpg);
     max-width: 100%;
     padding: 0 15px;
   }
   @include tablet {
-    // background-image: url(./images/bg1.jpg);
     max-width: 100%;
     padding: 0 15px;
   }
@@ -154,7 +152,7 @@ body {
     width: 680px;
     margin-bottom: 40px;
     @include mobile {
-      height: 70px;
+      height: 60px;
       width: 330px;
     }
   }
@@ -205,7 +203,7 @@ body {
         display: none;
       }
       position: absolute;
-      bottom: -22px;
+      bottom: -111px;
       right: 425px;
       z-index: 2;
       img {
@@ -263,11 +261,9 @@ body {
     color: var(--primary-text-color);
     @include tablet {
       position: initial;
-      margin-top: 50px;
     }
     @include mobile {
       position: initial;
-      margin-top: 25px;
     }
 
     .content {
@@ -311,69 +307,19 @@ body {
   margin-top: 260px;
   display: flex;
   gap: 20px;
-  @include mobile {
-    margin-top: 100px;
-    flex-direction: column;
-    align-items: center;
-    & {
-      .left-img {
-        order: 2;
-      }
-      .content {
-        order: 1;
-      }
-      .right-img {
-        display: none;
-      }
-    }
-  }
-  @include tablet {
-    margin-top: 150px;
-    flex-direction: column;
-    align-items: center;
-    & {
-      .left-img {
-        order: 2;
-      }
-      .content {
-        order: 1;
-      }
-      .right-img {
-        display: none;
-      }
-    }
-  }
 
   .content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    @include mobile {
-      gap: 30px;
-    }
-    @include tablet {
-      gap: 40px;
-    }
     .title {
       height: 95px;
       width: 460px;
-      @include mobile {
-        height: 70px;
-        width: 280px;
-      }
     }
     p {
       text-align: center;
       font-size: 14px;
-      @include mobile {
-        padding: 10px;
-        // color: #161502;
-        font-weight: 400;
-      }
-      @include tablet {
-        padding: 0 50px;
-      }
     }
   }
 
@@ -391,30 +337,10 @@ body {
 .road-map {
   display: block;
   margin-top: 130px;
-  @include mobile {
-    margin-top: 70px;
-  }
-  @include tablet {
-    margin-top: 70px;
-  }
   &-img {
     display: flex;
     justify-content: center;
     padding-left: 50px;
-    @include mobile {
-      padding-left: 0px;
-    }
-    @include tablet {
-      padding-left: 0px;
-    }
-    img {
-      @include mobile {
-        width: 220px;
-        height: 70px;
-      }
-      @include tablet {
-      }
-    }
   }
 
   .content {
@@ -423,21 +349,10 @@ body {
     font-size: 14px;
     margin-top: 90px;
     padding-left: 170px;
-    @include mobile {
-      flex-direction: column;
-      padding-left: 0px;
-    }
-    @include tablet {
-    }
     .box-phase {
       display: flex;
       flex-direction: column;
       gap: 60px;
-      @include mobile {
-        gap: 20px;
-        font-weight: 400;
-        font-size: 16px;
-      }
     }
     .phase {
       display: flex;

@@ -66,12 +66,10 @@ body {
   background-size: cover;
   overflow: hidden;
   @include mobile {
-    // background-image: url(./images/bg1.jpg);
     max-width: 100%;
     padding: 0 15px;
   }
   @include tablet {
-    // background-image: url(./images/bg1.jpg);
     max-width: 100%;
     padding: 0 15px;
   }
@@ -205,7 +203,7 @@ body {
         display: none;
       }
       position: absolute;
-      bottom: -22px;
+      bottom: -111px;
       right: 425px;
       z-index: 2;
       img {
@@ -321,6 +319,7 @@ body {
       }
       .content {
         order: 1;
+        gap: 30px !important;
       }
       .right-img {
         display: none;
@@ -328,7 +327,7 @@ body {
     }
   }
   @include tablet {
-    margin-top: 150px;
+    margin-top: 100px;
     flex-direction: column;
     align-items: center;
     & {
@@ -337,6 +336,7 @@ body {
       }
       .content {
         order: 1;
+        gap: 30px !important;
       }
       .right-img {
         display: none;
@@ -349,12 +349,6 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    @include mobile {
-      gap: 30px;
-    }
-    @include tablet {
-      gap: 40px;
-    }
     .title {
       height: 95px;
       width: 460px;
@@ -391,30 +385,10 @@ body {
 .road-map {
   display: block;
   margin-top: 130px;
-  @include mobile {
-    margin-top: 70px;
-  }
-  @include tablet {
-    margin-top: 70px;
-  }
   &-img {
     display: flex;
     justify-content: center;
     padding-left: 50px;
-    @include mobile {
-      padding-left: 0px;
-    }
-    @include tablet {
-      padding-left: 0px;
-    }
-    img {
-      @include mobile {
-        width: 220px;
-        height: 70px;
-      }
-      @include tablet {
-      }
-    }
   }
 
   .content {
@@ -423,21 +397,10 @@ body {
     font-size: 14px;
     margin-top: 90px;
     padding-left: 170px;
-    @include mobile {
-      flex-direction: column;
-      padding-left: 0px;
-    }
-    @include tablet {
-    }
     .box-phase {
       display: flex;
       flex-direction: column;
       gap: 60px;
-      @include mobile {
-        gap: 20px;
-        font-weight: 400;
-        font-size: 16px;
-      }
     }
     .phase {
       display: flex;
