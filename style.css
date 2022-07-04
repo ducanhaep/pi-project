@@ -19,13 +19,6 @@ dd {
   margin: 0;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--ff-secondary);
-}
-
 ul {
   list-style: none;
   margin: 0;
@@ -55,6 +48,7 @@ body {
   .wrapper {
     max-width: 100%;
     padding: 0 15px;
+    background-size: cover;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -67,7 +61,6 @@ body {
 .container {
   max-width: 1165px;
   margin: 0 auto;
-  border: 2px solid red;
 }
 @media screen and (max-width: 576px) {
   .container {
@@ -78,6 +71,78 @@ body {
   .container {
     max-width: 100%;
   }
+}
+
+@media screen and (max-width: 576px) {
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgb(153, 198, 253) 16%, rgb(120, 166, 224) 100%);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 1rem;
+    z-index: 10;
+    transition: all 0.3s linear;
+    transform: translate(-100%);
+  }
+  .navigation.show-sidebar {
+    transform: translate(0);
+  }
+  .navigation.show-sidebar .close-btn {
+    display: block;
+    color: rgb(240, 92, 92);
+    padding: 10px;
+  }
+  .navigation.show-sidebar .sidebar-toggle {
+    display: none;
+  }
+  .navigation .close-btn {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .navigation .links {
+    display: initial;
+    justify-content: initial;
+    align-items: initial;
+  }
+  .navigation .links .link:first-child {
+    display: none;
+  }
+  .navigation .links a {
+    display: block;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    padding: 1rem 1.5rem;
+  }
+}
+
+.navigation-header {
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  .navigation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .navigation-header img {
+    width: 80px;
+    height: 55px;
+  }
+  .navigation-header i {
+    font-size: 24px;
+  }
+}
+.navigation-header.main {
+  padding: 0;
+  padding-top: 10px;
 }
 
 .show-sidebar {
@@ -106,6 +171,11 @@ body {
 }
 .links .link.active a {
   color: #fff;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .links .link.active a {
+    color: #d88300;
+  }
 }
 
 .header-content {
@@ -226,6 +296,10 @@ body {
   .header-content-contract {
     position: initial;
     margin-top: 25px;
+    background-size: 80%;
+    height: 250px;
+    width: 210px;
+    margin-left: 55px;
   }
 }
 .header-content-contract .content {
@@ -239,10 +313,21 @@ body {
   font-size: 14px;
   padding-left: 20px;
 }
+@media screen and (max-width: 576px) {
+  .header-content-contract .contract {
+    font-size: 11px;
+    padding-left: 13px;
+  }
+}
 .header-content-contract .address {
-  font-size: 10px;
-  padding-left: 10px;
+  font-size: 12px;
   font-weight: 400;
+}
+@media screen and (max-width: 576px) {
+  .header-content-contract .address {
+    font-size: 9px;
+    padding-right: 46px;
+  }
 }
 .header-content-contract .copy {
   text-align: center;
@@ -254,6 +339,11 @@ body {
   border-top: 1px solid var(--primary-text-color);
   border-bottom: 1px solid var(--primary-text-color);
   cursor: pointer;
+}
+@media screen and (max-width: 576px) {
+  .header-content-contract .copy {
+    margin-right: 30px;
+  }
 }
 .header-content-contract .cloud img {
   height: 300px;
@@ -394,6 +484,13 @@ body {
   .road-map .content {
     flex-direction: column;
     padding-left: 0px;
+    margin-top: 60px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .road-map .content {
+    padding-left: 0px;
+    margin-top: 60px;
   }
 }
 .road-map .content .box-phase {
@@ -405,12 +502,22 @@ body {
   .road-map .content .box-phase {
     gap: 20px;
     font-weight: 400;
-    font-size: 16px;
   }
 }
 .road-map .content .phase {
   display: flex;
   gap: 10px;
+}
+@media screen and (max-width: 576px) {
+  .road-map .content .image {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .road-map .content .image {
+    display: none;
+  }
 }
 .road-map .content .image img {
   width: 220px;
@@ -428,27 +535,123 @@ body {
   align-items: end;
   min-height: 1020px;
 }
+@media screen and (max-width: 576px) {
+  .list-exchanges .content {
+    flex-direction: column;
+    padding-left: 0;
+    min-height: initial;
+    gap: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .list-exchanges .content {
+    flex-direction: column;
+    padding-left: 0;
+    gap: 0;
+    min-height: initial;
+  }
+}
 .list-exchanges .content .left {
   align-self: flex-end;
+}
+@media screen and (max-width: 576px) {
+  .list-exchanges .content .left {
+    align-self: center;
+    padding-left: 30px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .list-exchanges .content .left {
+    align-self: center;
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .list-exchanges .content .left img {
+    width: 220px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 576px) {
+  .list-exchanges .content .right {
+    align-self: center;
+    padding-left: 30px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .list-exchanges .content .right {
+    align-self: center;
+    padding-left: 70px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .list-exchanges .content .right img {
+    width: 320px;
+    height: auto;
+  }
 }
 
 .the-god-nft {
   margin-top: 20px;
   display: block;
 }
+@media screen and (max-width: 576px) {
+  .the-god-nft {
+    margin-top: 70px;
+  }
+}
 .the-god-nft-image {
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
+}
+@media screen and (max-width: 576px) {
+  .the-god-nft-image img {
+    width: 270px;
+    height: auto;
+  }
 }
 .the-god-nft .content {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
+@media screen and (max-width: 576px) {
+  .the-god-nft .content {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 17px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .the-god-nft .content {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .the-god-nft .content-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .the-god-nft .content img {
   width: auto;
   height: 380px;
+}
+@media screen and (max-width: 576px) {
+  .the-god-nft .content img {
+    width: 270px;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .the-god-nft .content img {
+    width: auto;
+    height: auto;
+  }
 }
 
 .list-exchanges-bottom-title {
@@ -457,10 +660,31 @@ body {
   margin-top: 300px;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 576px) {
+  .list-exchanges-bottom-title {
+    margin-top: 70px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .list-exchanges-bottom-title {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .list-exchanges-bottom-title img {
+    width: 270px;
+    height: auto;
+  }
+}
 .list-exchanges-bottom-image {
   padding-left: 50px;
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 576px) {
+  .list-exchanges-bottom-image {
+    padding-left: 60px;
+  }
 }
 
 .list-bottom-links {
@@ -472,11 +696,21 @@ body {
   position: relative;
   box-shadow: 4px 8px 9px 2px rgba(0, 0, 0, 0.69);
 }
+@media screen and (max-width: 576px) {
+  .list-bottom-links {
+    margin-top: -120px;
+  }
+}
 .list-bottom-links .list-links {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 0;
+}
+@media screen and (max-width: 576px) {
+  .list-bottom-links .list-links {
+    flex-direction: column;
+  }
 }
 .list-bottom-links .list-links img {
   width: 90%;
@@ -489,6 +723,11 @@ body {
   margin-top: 50px;
   display: flex;
   justify-content: center;
+}
+@media screen and (max-width: 576px) {
+  .features-title img {
+    height: 80px;
+  }
 }
 .features .list-bottom-links {
   margin-top: 45px;
@@ -513,6 +752,14 @@ body {
   background-image: url("./images/feature-address-bg.png");
   z-index: 3;
   margin-top: -30px;
+  cursor: pointer;
+}
+@media screen and (max-width: 576px) {
+  .features-address .box {
+    width: 100%;
+    word-wrap: break-word;
+    font-size: 12px;
+  }
 }
 .features-links {
   padding: 0;
@@ -520,6 +767,20 @@ body {
   display: flex;
   justify-content: center;
   gap: 40px;
+}
+@media screen and (max-width: 576px) {
+  .features-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .features-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
 }
 .features-social {
   padding: 0;
@@ -529,6 +790,44 @@ body {
   margin-top: 50px;
   align-items: center;
 }
+.features-social div {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 40px;
+}
+@media screen and (max-width: 576px) {
+  .features-social div {
+    gap: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .features-social div {
+    gap: 0;
+  }
+}
+@media screen and (max-width: 576px) {
+  .features-social {
+    gap: 0;
+    padding-left: 5px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .features-social {
+    gap: 0;
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .features-social img {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .features-social img {
+    width: 90%;
+  }
+}
 
 footer {
   display: flex;
@@ -536,6 +835,7 @@ footer {
   align-items: center;
   font-weight: 500;
   min-height: 150px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
