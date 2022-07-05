@@ -47,12 +47,20 @@ html:focus-within {
 
 body {
   font-family: "Poppins", sans-serif;
+  background: rgb(28, 91, 194);
+  background: linear-gradient(
+    0deg,
+    rgba(28, 91, 194, 1) 32%,
+    rgba(222, 242, 254, 1) 68%,
+    rgba(109, 174, 254, 1) 100%
+  );
 }
 
 .wrapper {
   background-image: url(./images/big-bg-1.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  background-position: center center;
   overflow: hidden;
   @include mobile {
     max-width: 100%;
@@ -62,6 +70,7 @@ body {
   @include tablet {
     max-width: 100%;
     padding: 0 15px;
+    background-size: cover;
   }
   margin: 0 auto;
 }
@@ -179,9 +188,6 @@ body {
     &.active {
       a {
         color: #fff;
-        @include tablet {
-          color: #d88300;
-        }
       }
     }
   }

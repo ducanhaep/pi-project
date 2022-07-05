@@ -35,12 +35,15 @@ html:focus-within {
 
 body {
   font-family: "Poppins", sans-serif;
+  background: rgb(28, 91, 194);
+  background: linear-gradient(0deg, rgb(28, 91, 194) 32%, rgb(222, 242, 254) 68%, rgb(109, 174, 254) 100%);
 }
 
 .wrapper {
   background-image: url(./images/big-bg-1.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  background-position: center center;
   overflow: hidden;
   margin: 0 auto;
 }
@@ -55,6 +58,7 @@ body {
   .wrapper {
     max-width: 100%;
     padding: 0 15px;
+    background-size: cover;
   }
 }
 
@@ -171,11 +175,6 @@ body {
 }
 .links .link.active a {
   color: #fff;
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .links .link.active a {
-    color: #d88300;
-  }
 }
 
 .header-content {
